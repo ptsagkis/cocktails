@@ -1,0 +1,13 @@
+
+<div class="main-parent mat-typography mat-app-background" 
+[class.accepted-dark-theme]="themeSwitchService.isDarkTheme">
+
+  <mat-toolbar class="drinks-toolbar " color="primary">
+    <a mat-button routerLink="/">
+      <h2>{{title}}</h2></a>
+      <app-theme-switch></app-theme-switch>
+  </mat-toolbar>
+
+  <router-outlet></router-outlet>
+  
+  </div>

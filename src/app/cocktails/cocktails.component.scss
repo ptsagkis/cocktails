@@ -1,0 +1,55 @@
+
+
+.coctails-controls {
+    max-width: 1170px;
+
+    margin: auto;
+    text-align: start;
+    padding: 64px;
+    margin-bottom: 16px;
+    display: flex;
+}
+
+
+.coctails-list {
+    display: flex;
+    flex-flow: row wrap;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+}
+  
+.coctail-card {
+    width: 200px;
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-bottom: 16px;
+    transition: all .8s ease-in-out;
+}
+
+.coctail-card:hover {
+    transform: rotateY(360deg);
+}
+
+.dark-back{
+    background:black;
+}
+
+.coctail-image {
+    background-size: cover;
+    cursor: pointer;
+    height: 200px;
+    // transform: rotateY(-180deg);
+    transform-style: preserve-3d;
+    transition: all .8s ease-in-out;
+}
+
+
+.drink-header-image {
+    background-size: cover;
+}
+
+
+
+
+  

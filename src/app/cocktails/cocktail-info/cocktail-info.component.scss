@@ -1,0 +1,46 @@
+
+
+
+.ingredient-image {
+    width:20vw;
+    border: 5px solid black;
+  }
+
+.boxes {
+    display: flex;
+    padding-top: 32px;
+    justify-content: center;
+    height: 100%;
+  }
+  
+  .column {
+    width:30%;
+    height: 100%;
+    padding: 30px;
+    margin: 30px;
+    text-align: center;
+  }
+
+  .ingrdnt-list {
+    display: flex;
+    flex-flow: row wrap;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+}
+  
+.ingrdnt-card {
+    width: 250px;
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-bottom: 16px;
+    transition: all .8s ease-in-out;
+}
+
+.dark-back{
+    background:black;
+}
+
+
+
+  

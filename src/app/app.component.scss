@@ -1,0 +1,12 @@
+
+.toolbar-spacer {
+    flex: 0.96 1 auto;
+  }
+
+  .drinks-toolbar {
+    display:flex;
+    padding: 0 64px;
+    position: fixed;
+    justify-content: space-between;
+    z-index: 99999;
+}

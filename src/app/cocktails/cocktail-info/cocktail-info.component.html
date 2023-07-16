@@ -1,0 +1,40 @@
+<div *ngIf="drink" class="boxes">
+    <div class="column" >
+        <h1>{{drink.strDrink}}</h1>
+          <p><img mat-card-image  class="ingredient-image" src="{{drink.strDrinkThumb}}" [alt]="drink.strDrink"></p>
+          <p><b>Type:</b> {{drink.strAlcoholic}}</p>
+          <p><b>Glass Type:</b> {{drink.strGlass}}</p>
+    </div>
+    <div class="column">
+        <h1><b>Instructions:</b></h1>
+        <div>{{drink.strInstructions}}</div>
+        <h1 style="padding-top:30px"><b>Ingredient measures:</b></h1>
+        <p *ngFor="let im of ingredientAndMeasures" class="instr-cntn">{{im}}</p>
+    </div>
+  </div>
+  <div style="text-align: center;">
+    <h1>Ingredient info:</h1>
+    </div>
+  <div *ngIf="drink" class="boxes">
+    <div class="ingrdnt-list boxes">
+        
+        <mat-card class="ingrdnt-card" [ngClass]="{'dark-back': themeService.isDarkTheme}" *ngFor="let ingr of ingerdients">
+            <mat-card-header>
+              <div mat-card-avatar style="background-image: url('https://www.thecocktaildb.com/images/ingredients/{{ingr.strIngredient}}-Small.png');background-size: cover;" ></div>
+              <mat-card-title>{{ingr.strIngredient}}</mat-card-title>
+              <mat-card-subtitle>{{ingr.strType}}</mat-card-subtitle>
+            </mat-card-header>
+            
+            <img mat-card-image src="https://www.thecocktaildb.com/images/ingredients/{{ingr.strIngredient}}-Medium.png" alt="Photo of {{ingr.strIngredient}}">
+            <mat-card-content>
+                <p><b>Alcoholic:</b> {{ingr.strAlcohol}}</p>
+                <p><b>ABV</b>: {{ingr.strABV}}</p>
+            </mat-card-content >
+            <mat-card-actions>
+      
+            </mat-card-actions>
+        </mat-card>
+    </div>
+  </div>
+
+  

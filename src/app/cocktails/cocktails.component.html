@@ -1,0 +1,39 @@
+<section>
+<form [formGroup]="drinksForm">
+    <div class="coctails-controls row">
+        <mat-form-field >
+            <mat-label>Search for drinks</mat-label>
+            <input matInput placeholder="Cocktail" formControlName="searchStr" value="">
+        </mat-form-field>
+
+        <mat-form-field style="margin-left: auto">
+            <mat-label>select category</mat-label>
+                <mat-select color="primary" formControlName="catSelect" value="">
+                    <mat-option *ngFor="let cat of drinkCats" [value]="cat">
+                        {{cat}}
+                    </mat-option>
+                </mat-select>
+        </mat-form-field>
+    </div>
+    <mat-progress-bar mode="indeterminate" *ngIf="cocktailsdbService.apiLoading"></mat-progress-bar>
+    <div class="coctails-list">
+        <mat-card class="coctail-card" [ngClass]="{'dark-back': themeService.isDarkTheme}" *ngFor="let drink of drinks">
+
+            
+            <mat-card-header>
+              <div mat-card-avatar style="background-image: url('{{drink.strDrinkThumb}}');background-size: cover;" ></div>
+              <mat-card-title>{{drink.strDrink}}</mat-card-title>
+              <mat-card-subtitle>{{drink.strCategory}}</mat-card-subtitle>
+            </mat-card-header>
+            
+            <img [routerLink]="['/cocktail', drink.idDrink ]"  mat-card-image class="coctail-image" src="{{drink.strDrinkThumb}}" alt="Photo of {{drink.strDrink}}">
+            <mat-card-content>
+            </mat-card-content>
+            <mat-card-actions>
+              <a mat-button color="accent" [routerLink]="['/cocktail', drink.idDrink ]" routerLinkActive="active">MORE</a>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</form>
+</section>
+
