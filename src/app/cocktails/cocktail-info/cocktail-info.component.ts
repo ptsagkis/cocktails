@@ -41,9 +41,9 @@ export class CocktailInfoComponent implements OnInit {
         if (key.startsWith('strIngredient') && drink[key]){
           const num: string = 'strMeasure' + key.replace('strIngredient', '') 
           const ingrd: string = drink[key] +'';
-          const meas: string = drink[num as (keyof typeof drink)] +'';
+          const meas: string = drink[num as (keyof typeof drink)] ? drink[num as (keyof typeof drink)] +'' : '';
           
-          this.ingredientAndMeasures.push(ingrd + (meas ? ' (' + meas + ')' : ''));
+          this.ingredientAndMeasures.push(ingrd + ' (' + meas + ')');
           if (ingrdntReq$.length<6){
             ingrdntReq$.push(this.cocktailsdbService.getIngredientByName(ingrd)); 
           }

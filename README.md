@@ -8,7 +8,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ## Overview 
 
-This is a demo project in repsonce to Accepted hiring process.
+This is a demo project.
 I have choosen the cocktails DB as the external 3d party api.
 
 These are the main requirements
@@ -24,15 +24,15 @@ These are the main requirements
 
 ### 1. See all items from the API on the main page 
 
-The api does not allow to query all items. This is reasonable for a third party library. However, searching drinks with an empty string returns 25 drinks randomly. 
+The api does not allow to query all items. This is reasonable for a third party API. However, searching drinks with an empty string returns 25 drinks randomly. 
 
-These are displayed within the landingg page:
+These are displayed within the landing page:
 
 ![Alt text](demo_images/image1.png)
 
 ### 2. Search for items using an input field
 
-I have choosen to utilize a `formControlName` and subscribe a value changes event to it, in order to execute the search. Consider that I have also piped a 1000 ms debounce time. So, the user can write down the search filter but the request will be sent to the server once the user stops typing for 1 second.
+I have choosen to utilize a `formControlName` and subscribe a value change event to it, in order to execute the search. Consider that I have also piped a 1000 ms debounce time. So, the user can write down the search filter but the request will be sent to the server once the user stops typing for 1 second.
 
 ![Alt text](demo_images/image2.png)
 
@@ -43,14 +43,18 @@ In a same manner, as 2, I use a `formControlName` to filter items by category. D
 
 ### 4. Click on an item to see more detailed information on a separate page
 
-I use the routing module to navigate to the "drink info page" whenever you click on an item. This page also diplays the ingredients of the selected drink. 
+I use the routing module to navigate to the "drink info page" whenever you click on an item. This page also diplays the ingredients of the selected drink. The "cocktail-info" page accepts the drinkId as an argument of ActivatedRoute. 
 ![Alt text](demo_images/image4.png)
+
+If you want to move back, click on the logo on topbar:
+
+![Alt text](demo_images/image5.png)
 
 ### 5. Toggle the color scheme between light and dark mode
 
-I have utilised a sharing component along with a service holding the choosen mode (dark /light). If you want to move back, click on the logo page on topbar. 
+I have utilised a sharing component along with a service holding the choosen mode (dark /light). 
 
-![Alt text](demo_images/image5.png)
+![Alt text](demo_images/image7.png)
 
 ### 6. Maintain the state of the color scheme after refreshing the browser
 

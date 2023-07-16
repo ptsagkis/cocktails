@@ -15,7 +15,7 @@
                 </mat-select>
         </mat-form-field>
     </div>
-    <mat-progress-bar mode="indeterminate" *ngIf="cocktailsdbService.apiLoading"></mat-progress-bar>
+    <mat-progress-bar color="warn" mode="indeterminate" *ngIf="cocktailsdbService.apiLoading"></mat-progress-bar>
     <div class="coctails-list">
         <mat-card class="coctail-card" [ngClass]="{'dark-back': themeService.isDarkTheme}" *ngFor="let drink of drinks">
 
